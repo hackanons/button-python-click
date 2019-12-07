@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Python button script
+        </title>
+    </head>
+    <body>
+        <button onclick="location.href='{% url 'script' %}'">Execute Script</button> <hr>
+        {% if data %}
+        
+        {{data | safe}}
+
+        {% endif %}
+        <br><br>
+        {% if raw_url or edit_url %}
+        <span>
+        RAW IMAGE:
+        <img src={{raw_url}} height=500 width=500>
+        PROCESSED IMAGE:
+        <img src={{edit_url}} height=500 width=500>
+        </span>
+
+        {% endif %}
+
+<br><br>
+        <form action="/external/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+           Input Text:
+            <input type="text" name="param" required><br><br>
+           <br><br>
+
+           <input type="file" name="image" required>
+            <br><br>
+            <input type="submit" value="Execute External Python Script">
+        
+        </form>
+
+
+        </body>
+</html>
