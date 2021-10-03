@@ -1,0 +1,42 @@
+<html> 
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" type="text/css" href="../static/index.css"> 
+
+
+
+
+	</head>
+	
+	<body>
+
+        <form class="grid" action="/result" method="POST">
+
+          {% if name %}
+            <center>
+              <h3 style="color: blue;" class="let_space">Hello {{name}}, How was your day!!</h3>
+            </center> 
+
+          {% endif %}
+           
+          <label for="name">Enter you name:</label>
+          <input type="text" id="name" name="name">
+
+          <center><input class="file_submit" type="Submit"></center>
+
+        </form>
+
+        
+
+        
+
+        
+        <br>
+        <br>
+        <br>
+
+
+    </body>
+
+</html>
